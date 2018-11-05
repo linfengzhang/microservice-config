@@ -8,8 +8,19 @@ server:
 spring:
   profiles: dev
   application:
-    name: microservice-config-client
+    name: microservice-config-client-dev
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+---
+server:
+  port: 8202
+spring:
+  profiles: test
+  application:
+    name: microservice-config-client-test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka
